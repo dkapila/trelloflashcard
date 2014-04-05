@@ -1,4 +1,17 @@
 $(document).ready(function() {
+
+
+	(function trelloAuthorize() {
+		$("#authorize").click (function () {
+			opts = {
+				"name" : "trelloFlashCard",
+				"expiration" : "30days",
+				"persist" : true
+			};
+			Trello.authorize(opts) 
+		});	
+	})();
+
 	(function getCards() {
 		$("#keywordTextBox").keydown(function(e) {		
 		    //if enter key pressed in textbox
