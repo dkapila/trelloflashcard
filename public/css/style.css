@@ -14,8 +14,9 @@
 	height: 40px;
 }
 
-#authorize {
+.authButton {
 	font-family: Lato;	
 	position: relative;
 	left: 150px;
+	display: none;
 }
