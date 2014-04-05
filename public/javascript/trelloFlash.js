@@ -1,7 +1,20 @@
 $(document).ready(function() {
 
 	var TrelloApp;
+	var TrelloCards = [];
+
 	(function trelloAuthorize() {
+		function getCards() {
+			 Trello.get("members/me/boards", function(boards) { 
+			    boards.forEach(function (board) {
+			        Trello.get("boards/"+ board.id +"/cards", function(cards) {  
+			            cards.forEach(function (card) {
+			                TrelloCards.push(card);
+			            });
+			        });
+			    });
+			 });
+		}
 
 		function tokenReceived() {
 			console.log ('logged in');
@@ -20,6 +33,7 @@ $(document).ready(function() {
 			$("#authorize").show();
 		}
 		else {
+			getCards();
 			$("#deauthorize").show();
 		}
 
@@ -31,6 +45,7 @@ $(document).ready(function() {
 				"success" : tokenReceived
 			};
 			Trello.authorize(opts); 
+			getCards();
 			$(this).hide();
 			$("#deauthorize").show();
 		});	
@@ -40,8 +55,6 @@ $(document).ready(function() {
 			$(this).hide();
 			$("#authorize").show();
 		});
-
-
 	})();
 
 
