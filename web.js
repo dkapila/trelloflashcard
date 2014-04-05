@@ -1,15 +1,13 @@
 // web.js
 var express = require("express");
 var logfmt = require("logfmt");
-var routes = require('./routes/routelist')
+var routes = require('./routes/routelist');
 var path = require('path');
 var app = express();
 
 app.use(logfmt.requestLogger());
 
 app.get('/', routes.index);
-
-
 
 app.configure(function() {
     app.set('port', process.env.PORT || 3000);
