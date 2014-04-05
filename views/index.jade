@@ -5,10 +5,11 @@ html
     link(rel='stylesheet', href='/css/style.css')
   body
     #wrap
-        #content
-    input(type='text', name = 'newWord', id='keywordTextBox', autocomplete = "off", placeholder ='Search')
-    button(id="authorize", class="authButton")  Authorize Trello Account
-     button(id="deauthorize", class="authButton")  Deauthorize Trello Account   
+        input(type='text', name = 'newWord', id='keywordTextBox', autocomplete = "off", placeholder ='Search')
+        button(id="authorize", class="authButton")  Authorize Trello Account
+        button(id="deauthorize", class="authButton")  Deauthorize Trello Account  
+        #results
+ 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     script(src='/javascript/trelloFlash.js')
     script(src='https://api.trello.com/1/client.js?key=' + trello_app_key)

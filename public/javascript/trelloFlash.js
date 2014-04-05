@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var TrelloApp;
-	var TrelloCards = [];
+	window.TrelloCards = [];
 
 	(function trelloAuthorize() {
 		function getCards() {
@@ -62,11 +62,17 @@ $(document).ready(function() {
 		$("#keywordTextBox").keydown(function(e) {		
 		    //if enter key pressed in textbox
     		if (e.keyCode == 13) {	
+    			$("#results").empty();
     			//get textbox value
         		var keyvalue = $("#keywordTextBox").val();
-        		Trello.get("members/me/cards", function (cards) {
-        			console.json(cards);
-        		});
+
+        		TrelloCards.forEach(function (trellocard){
+        			if (trellocard.name.indexOf(keyvalue) != -1) {
+        				console.log(trellocard);
+        				$("#results").append('<a href="' + trellocard.shortUrl + '"> ' + 
+        					'<div id="trelloCard">' + trellocard.name + '</div>  </a></br>');
+        			}
+        		})
 		    }
     	});
 	})();
