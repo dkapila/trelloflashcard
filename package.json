@@ -1,21 +1,22 @@
 {
-  "name": "trelloFlashCard",
-  "version": "0.0.0",
-  "description": "Flash Cards for trello",
-  "main": "web.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "trello",
-    "flash",
-    "cards",
-    "learning"
-  ],
-  "author": "Dharam Kapila",
-  "license": "BSD-2-Clause",
-  "dependencies": {
-    "logfmt": "~1.1.2",
-    "express": "~3.5.1"
-  }
+    "name": "trelloFlashCard",
+    "version": "0.0.0",
+    "description": "Flash Cards for trello",
+    "main": "web.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "trello",
+        "flash",
+        "cards",
+        "learning"
+    ],
+    "author": "Dharam Kapila",
+    "license": "BSD-2-Clause",
+    "dependencies": {
+        "logfmt": "~1.1.2",
+        "express": "~3.5.1",
+        "jade": "0.29.x",
+    }
 }
