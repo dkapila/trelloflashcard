@@ -8,6 +8,7 @@ var app = express();
 app.use(logfmt.requestLogger());
 
 app.get('/', routes.index);
+app.set('conf', require('./config.json'));
 
 app.configure(function() {
     app.set('port', process.env.PORT || 3000);
